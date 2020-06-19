@@ -91,17 +91,6 @@ public class RealtimeConverterExample {
 				player.setGameMode(GameMode.CREATIVE);
 			});
 
-			player.addEventCallback(PlayerBlockPlaceEvent.class, event -> {
-				if (event.getBlockId() == 1) {
-					Instance instance = event.getPlayer().getInstance();
-					for (int i = 0; i < Chunk.CHUNK_SIZE_Y; i++) {
-						BlockPosition blockPosition = event.getBlockPosition();
-						blockPosition.setY(i);
-						instance.setBlock(blockPosition, (short) 0);
-					}
-				}
-			});
-
 			player.addEventCallback(PlayerChunkUnloadEvent.class, event -> {
 				Instance instance = player.getInstance();
 
