@@ -34,7 +34,8 @@ dependencies {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'com.mcecraft.worldConverter.StandaloneConverter'
+                "Main-Class": "net.minestom.converter.StandaloneConverter",
+                "Multi-Release": true
         )
     }
 }
