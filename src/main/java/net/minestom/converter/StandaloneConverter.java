@@ -42,7 +42,8 @@ public class StandaloneConverter {
 		baseDir = new File("regions");
 		if (baseDir.isDirectory()) {
 			for (final File file : baseDir.listFiles()) {
-				if (file.getName().startsWith("r.") && file.getName().endsWith(".mca")) {
+				if (file.length() > 0 &&
+						file.getName().startsWith("r.") && file.getName().endsWith(".mca")) {
 					mcaFiles.put(file.getName(), MCAUtil.read(file));
 				}
 			}
